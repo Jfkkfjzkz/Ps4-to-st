@@ -1,0 +1,15 @@
+afterglow web exploit - 14.02 build (UPDATED)
+==============================================
+cache version : 1402x
+entry page    : go-x.html
+patchset      : 14.02 (delayed-panic site shifted 0x628F6F -> 0x62926F)
+patchset md5  : ef106363b8d9836e4dc03601bc42e720
+patchset 14.00 backup kept on the server as patchset-1400.bin.bak (md5 6954620ae517d3b882e332bd9ed407dc)
+
+Changes vs the previous package:
+- patchset.bin rebuilt for 14.02 (single site shift, everything else verified against the 14.02 dump)
+- patchset fetch now carries a cache-buster (?_=<time>) - the console could otherwise serve the old 641 bytes from cache forever
+- entry is go-x.html so no cached launch URL can collide
+
+Run: serve this folder, open go-x.html in the console browser after a full power cycle.
+Server script: server.py (port 1337, Cache-Control: no-store, /ag_log answers 200).
